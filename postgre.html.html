@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Insert Data</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      position: relative; 
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+    .background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('https://images.unsplash.com/photo-1432821596592-e2c18b78144f?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bG9naW58ZW58MHx8MHx8fDA%3D');
+      background-size: cover;
+      background-position: center;
+      filter: blur(5px); 
+      z-index: -1; 
+    }
+    .form-container {
+      width: 400px;
+      border-radius: 16px;
+      padding: 32px 24px;
+      font-size: 14px;
+      font-family: inherit;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      box-sizing: border-box;
+      background: none;
+      border: none; 
+      box-shadow: none; 
+      z-index: 1; 
+    }
+    
+    .form-container button:active {
+      scale: 0.95;
+    }
+    .form-container{
+      max-width: 400px;
+    margin: 50px auto;
+    }
+    .form-container .form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center; 
+      align-items: center; 
+      gap: 20px;
+    }
+    
+    .form-container .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    
+    .form-container .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      color: #111111;
+      font-weight: bold;
+      font-size: 18px;
+    }
+    .form-container .form-group input {
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: 10px;
+      color: #fff;
+      font-family: inherit;
+      background-color: transparent;
+      border: 1px solid #030303;
+    }
+    
+    .form-container .form-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: 8px;
+      resize: none;
+      color: #fff;
+      height: 96px;
+      border: 1px solid #414141;
+      background-color: transparent;
+      font-family: inherit;
+    }
+    
+    .form-container .form-group input::placeholder {
+      opacity: 0.5;
+    }
+    
+    .form-container .form-group input:focus {
+      outline: none;
+      border-color: #e81cff;
+    }
+    
+    .form-container .form-group textarea:focus {
+      outline: none;
+      border-color: #e81cff;
+    }
+    
+    .form-container .btn {
+      align-items: center;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      align-self: flex-start;
+      font-family: inherit;
+      color: #ffffff;
+      font-weight: 600;
+      width: 40%;
+      background: #313131;
+      border: 1px solid #000000;
+      padding: 12px 16px;
+      font-size: inherit;
+      gap: 8px;
+      margin-top: 8px;
+      cursor: pointer;
+      border-radius: 6px;
+      width: 350px;
+      padding-left: 25%;
+      padding-right: 25%;
+    }
+    
+    .form-container .btn:hover {
+      background-color:#94a6d6;
+      border-color: #94a6d6;
+    }
+    .form{
+      align-items: center;
+      justify-content: center;
+    }
+    h1 {
+      text-align: center;
+    }
+  </style>
+  <script>
+    function set(o){
+        document.getElementById("form").action="http://localhost:5000"+o;
+    }
+  </script>
+</head>
+<body>
+  <!-- New element for blurred background -->
+  <div class="background"></div>
+  
+  <div class="form-container">
+    <h1 style="color:#ddd565; font-weight: bold;">CRUD OPERATIONS</h1>
+    <form action="" method="post"  id="form" >
+      <div class="form-group">
+        <label for="roll">Roll:</label>
+      <input type="text" id="roll" name="roll" ><br>
+      <label for="name">First Name:</label>
+      <input type="text" id="name" name="name" ><br>
+      <label for="lname">Last Name:</label>
+      <input type="text" id="lname" name="lname" ><br>
+      <label for="mailid">mailid:</label>
+      <input type="text" id="description" name="mailid"><br>
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age" ><br>
+      <label for="address">Address:</label>
+      <input type="textarea" id="address" name="address">
+      <button type="submit" class="btn" onclick="set('/insert')">Insert</button>
+      <button type="submit" class="btn" onclick="set('/update')">Update</button>
+      <button type="submit" class="btn" onclick="set('/delete')">Delete</button>
+      <button type="submit" class="btn" onclick="set('/find')">Find</button>
+    </div>
+    </form>
+  </div>
+  </body>
+  </html>
+      
